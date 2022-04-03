@@ -1,0 +1,34 @@
+name: Serverless Deployement
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: "17.x"
+              #install serverless
+            - name: Install Serverless Framework
+              run: npm install -g serverless
+              # authentication
+            - name: Serverless AWS authentication
+              run: sls config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              # create ENV, use the shell `cat` command to create env.yml from secrets
+            - name: Create env file
+              run: |
+                  cat > env.yml << EOF
+                  ${{ secrets.ENV }}
+                  EOF
+              #install node modules
+            - name: Install NPM dependencies
+              run: npm ci
+              #serverless deploy
+            - name: Deploy to AWS
+              run: sls deploy --verbose      
+
