@@ -3,8 +3,6 @@
 service: serverless-flask
 
 configValidationMode: error
-environment:
-      SLS_DEBUG: "*"
 
 package:
   patterns:
