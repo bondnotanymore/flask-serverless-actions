@@ -16,3 +16,6 @@ pytest = "^5.2"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+fleece_set_aws_access = "fleece run -c ./environments.yml -e dev"
