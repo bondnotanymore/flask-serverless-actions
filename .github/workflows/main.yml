@@ -25,11 +25,6 @@ jobs:
               # Install poetry action
             - name: Install Poetry Action
               uses: snok/install-poetry@v1.3.1
-            - name: Where am i?
-              run: |
-                pwd
-                ls -l ${{ github.workspace }}
-                cat environments.yml
               # Test if fleece[cli] is installed and is working
             - name: Test fleece cli working?
               if:  ${{ success() }}
@@ -37,8 +32,7 @@ jobs:
                 poetry install
                 source $(poetry env info --path)/bin/activate
                 fleece run --help
-                fleece run -u ${{ secrets.RS_USERNAME }} -k ${{ secrets.RS_API_KEY }} -c ./environments.yml -e dev "echo ${{ env.AWS_ACCESS_KEY_ID }}"
-                echo 'Hi ${{ env.AWS_ACCESS_KEY_ID }}'
+                fleece run -u ${{ secrets.RS_USERNAME }} -k ${{ secrets.RS_API_KEY }} -c ./environments.yml -e dev "sls deploy --verbose"
               #serverless deploy
             # - name: Deploy to AWS
             #   run: sls deploy --verbose
