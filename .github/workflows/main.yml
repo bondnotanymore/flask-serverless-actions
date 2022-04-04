@@ -32,8 +32,8 @@ jobs:
               # Test if fleece[cli] is installed and is working
             - name: Test fleece cli working?
               run: |
-              poetry install
-              source $(poetry env info --path)/bin/activate
-              fleece run --help
+                poetry install
+                source $(poetry env info --path)/bin/activate
+                fleece run --help
 
 
