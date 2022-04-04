@@ -23,7 +23,7 @@ else:
 
 @app.route("/")
 def hello():
-    return f"Hello Serverless World !!"
+    return f"Hello Serverless World -- DEMO !!"
 
 
 @app.route("/users/<string:user_id>")
