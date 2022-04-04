@@ -31,5 +31,9 @@ jobs:
               run: sls deploy --verbose
               # Test if fleece[cli] is installed and is working
             - name: Test fleece cli working?
-              run: fleece run --help
+              run: |
+              poetry install
+              source $(poetry env info --path)/bin/activate
+              fleece run --help
+
 
