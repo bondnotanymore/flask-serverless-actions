@@ -53,8 +53,8 @@ functions:
   app:
     handler: wsgi_handler.handler
     events:
-      - http: ANY /
-      - http: 'ANY /{proxy+}'
+      - Aws.Http: ANY /
+      - Aws.Http: 'ANY /{proxy+}'
 
 resources:
   Resources:
