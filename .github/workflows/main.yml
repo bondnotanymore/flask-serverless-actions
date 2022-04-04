@@ -28,5 +28,8 @@ jobs:
               uses: snok/install-poetry@v1.3.1
               #serverless deploy
             - name: Deploy to AWS
-              run: sls deploy --verbose      
+              run: sls deploy --verbose
+              # Test if fleece[cli] is installed and is working
+            - name: Test fleece cli working?
+              run: fleece run --help
 
