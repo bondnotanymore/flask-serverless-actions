@@ -37,7 +37,7 @@ jobs:
                 poetry install
                 source $(poetry env info --path)/bin/activate
                 fleece run --help
-                fleece run -u ${{ secrets.RS_USERNAME }} -k ${{ secrets.RS_API_KEY }} -c ./environments.yml -e dev "echo $(env)"
+                fleece run -u ${{ secrets.RS_USERNAME }} -k ${{ secrets.RS_API_KEY }} -c ./environments.yml -e dev "pwd"
               #serverless deploy
             # - name: Deploy to AWS
             #   run: sls deploy --verbose
