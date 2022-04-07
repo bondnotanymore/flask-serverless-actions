@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "flask-serverless-actions"
+name = "flask-serverless-actions-demo"
 version = "0.1.0"
 description = "Flask application built using serverless and deployed using github actions"
 authors = ["Kapil Mathur <kapilmathur87@gmail.com>"]
