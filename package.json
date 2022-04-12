@@ -13,13 +13,4 @@
     "serverless-dynamodb-local": "^0.2.40",
     "serverless-python-requirements": "^5.4.0",
     "serverless-wsgi": "^3.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bondnotanymore/flask-serverless-actions.git"
-  },
-  "bugs": {
-    "url": "https://github.com/bondnotanymore/flask-serverless-actions/issues"
-  },
-  "homepage": "https://github.com/bondnotanymore/flask-serverless-actions#readme"
-}
+  }
